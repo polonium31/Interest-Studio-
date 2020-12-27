@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <scriptsrc="https://kit.fontawesome.com/64d58efce2.js"crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="login_form_style.css">
+    <title>Sign in & Sign up Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" required/>
+            </div>
+            <input type="submit" value="Login" class="btn solid" />
+            <a href="C:\Users\admin\Desktop\hackathon\forgot_password.html">Forgot Password?</a>
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+              <ul>
+                <li><img src="img/google.png"></li>
+                <li><img src="img/facebook.png"></li>
+                <li><img src="img/linkedin.png"></li>
+
+              </ul>
+            </div>
+          </form>
+          <form action="#" class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" required/>
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Confirm Password" />
+            </div>
+
+            <input type="submit" class="btn" value="Sign up" />
+            <p class="social-text">Or Sign up with social platforms</p>
+            <div class="social-media">
+              <ul>
+                <li><img src="img/google.png"></li>
+                <li><img src="img/facebook.png"></li>
+                <li><img src="img/linkedin.png"></li>
+
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="panels-container">
+
+        <div class="panel left-panel">
+          <div class="content">
+            <div class="imageDiv1">
+                <img src="img/interest studio.jpg" class="image" id="image1"/>
+            </div>
+            <h3 class="head1">New here ?</h3>
+            <p class="p1">
+              Sign up and discover great amount of new opportunities!
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Sign up
+            </button>
+          </div>
+
+        </div>
+        <div class="panel right-panel">
+
+          <div class="content">
+            <div class="imageDiv2">
+                <img src="img/interest studio.jpg" class="image" id="image1"/>
+            </div>
+
+            <h3 class="head2">One of us?</h3>
+            <p class="p2">
+              If you already has an account, just sign in. We've missed you!
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Sign in
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
