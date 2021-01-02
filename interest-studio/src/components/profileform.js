@@ -70,11 +70,21 @@ class ProfileForm extends React.Component{
 
              <input type="text" className="input_field" id="my_university_text" placeholder="University Name" value={this.state.university} onChange={this.handleUniversityChange}/>
              <input type="text" className="input_field" id="my_project" placeholder="Your Projects" value={this.state.projects} onChange={this.handleProjectChange}/>
+
+             <input type="password" className="input_field" placeholder="Password" />
+             <input type="password" className="input_field" placeholder="Confirm Password"/>
+
              Contact Details
             <input type="text" id="my_email" className="input_field" placeholder="E mail" value={this.state.contact.email} onChange={this.handleEmailChange}/>
             <input type="number" className="input_field" placeholder="Contact Number" id="my_number"  value={this.state.contact.phone} onChange={this.handlePhoneChange}/>
-             <button id="submit_profile">Submit Profile</button>
+
+             <button id="submit_profile">Create Profile</button>
+
+
              </form>
+             <form  action="/signUp">
+                  <button id="login" to="/signUp">Login</button>
+              </form>
 
            </div>
        )

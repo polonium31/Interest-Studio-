@@ -1,4 +1,30 @@
 h1{
   font: 50px;
-  
 }
+
+.links{
+  font-family: 'Montserrat', sans-serif;
+  padding: 1%;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+	height: 200px;
+  background: -webkit-linear-gradient(right, #7579ff, #b224ef);
+
+  }
+.links:hover {
+background:-webkit-linear-gradient(right, #b224ef, #7579ff);
+
+}
+.header
+{
+  padding-top: 1%;
+  padding-bottom: 2%;
+}
+/* .logo
+{
+  float: right;
+	width: 180px;
+	height: 55px;
+	padding-top: 2.5mm;
+} */

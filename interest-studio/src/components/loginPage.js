@@ -20,7 +20,7 @@ const LoginPage=(props)=>(
           props.history.push("/")
         }
     }/>
-    <NavLink to="/signUp">SignUpPage</NavLink>
+
      </div>
 )
 export default connect()(LoginPage);

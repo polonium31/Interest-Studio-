@@ -2,17 +2,17 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 import {connect} from "react-redux";
 import myProfile from "./reducers/myProfile";
+import Interest_studio_logo from  "./interest studio.jpg";
 const Header=(props)=>{
 
    const link = props.myProfile.length !== 0 ? `/profile/${props.myProfile[0].id}` :"/";
 
   return (
     <div className="header">
-      <h1>Interest Studio</h1>
-      <NavLink to={link} >Profile</NavLink>
-      <NavLink to="/">ExploreFields</NavLink>
-      <NavLink to="/editProfile"> EditProfile </NavLink>
-      <NavLink to="/login">LoginPage</NavLink>
+      <NavLink className="links"to={link} >Profile</NavLink>
+      <NavLink className="links"to="/">ExploreFields</NavLink>
+      <NavLink className="links"to="/editProfile"> EditProfile </NavLink>
+      <NavLink className="links"to="/login">Sign In/Sign Up</NavLink>
     </div>
 )
 }

@@ -74,7 +74,24 @@ form {
   cursor: pointer;
   transition: 0.5s;
 }
-
 #submit_profile:hover{
   background: -webkit-linear-gradient(right, #b224ef, #7579ff);
+}
+#login
+{
+  width: 300px;
+  background: -webkit-linear-gradient(left, #7579ff, #b224ef);
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+#login:hover{
+  background: -webkit-linear-gradient(left, #b224ef, #7579ff);
 }
