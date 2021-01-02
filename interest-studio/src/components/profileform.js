@@ -14,7 +14,7 @@ class ProfileForm extends React.Component{
         }
     }
     handleNameChange=(e)=>{
-       const name=e.target.value 
+       const name=e.target.value
        this.setState(()=>({
            name
        }))
@@ -49,7 +49,7 @@ class ProfileForm extends React.Component{
        })
     }
     onSubmit=(e)=>{
-       
+
         e.preventDefault()
        this.props.onSubmit({
         name:this.state.name,
@@ -58,26 +58,26 @@ class ProfileForm extends React.Component{
         contact:this.state.contact.phone,
         email:this.state.contact.email,
         project:this.state.projects})
-       
+
    }
-  
+
    render(){
-        
+
         return (
            <div>
-            <form  onSubmit={this.onSubmit}>
-             Name:<input type="text"  id="my_name" placeholder="Your Name" value={this.state.name} onChange={this.handleNameChange}/>
+            <form  onSubmit={this.onSubmit} className="profile">
+             <input type="text" className="input_field" id="my_name" placeholder="Username" value={this.state.name} onChange={this.handleNameChange}/>
 
-             University : <input type="text" id="my_university_text" placeholder="Your University" value={this.state.university} onChange={this.handleUniversityChange}/>
-             projects:<input type="text" id="my_project" placeholder="Your Project" value={this.state.projects} onChange={this.handleProjectChange}/>
-             contact detaild
-             email<input type="text" id="my_email" placeholder="E mail" value={this.state.contact.email} onChange={this.handleEmailChange}/>
-             contact Number : <input type="number" placeholder="phone" id="my_number"  value={this.state.contact.phone} onChange={this.handlePhoneChange}/>
-             <button>Submit Profile</button>
+             <input type="text" className="input_field" id="my_university_text" placeholder="University Name" value={this.state.university} onChange={this.handleUniversityChange}/>
+             <input type="text" className="input_field" id="my_project" placeholder="Your Projects" value={this.state.projects} onChange={this.handleProjectChange}/>
+             Contact Details
+            <input type="text" id="my_email" className="input_field" placeholder="E mail" value={this.state.contact.email} onChange={this.handleEmailChange}/>
+            <input type="number" className="input_field" placeholder="Contact Number" id="my_number"  value={this.state.contact.phone} onChange={this.handlePhoneChange}/>
+             <button id="submit_profile">Submit Profile</button>
              </form>
-           
+
            </div>
        )
    }
 }
-export default ProfileForm; 
+export default ProfileForm;

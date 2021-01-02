@@ -8,7 +8,7 @@ import {v4 as uuidv4} from "uuid";
 
 
 const LoginPage=(props)=>(
-    <div>
+    <div className="login_page">
     <ProfileForm onSubmit={
         (profile)=>{
           const id=uuidv4();
