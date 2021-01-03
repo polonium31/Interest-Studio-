@@ -13,7 +13,9 @@ const Header=(props)=>{
       <NavLink className="links"to="/">ExploreFields</NavLink>
       <NavLink className="links"to="/editProfile"> EditProfile </NavLink>
       <NavLink className="links"to="/login">Sign In/Sign Up</NavLink>
+
     </div>
+
 )
 }
 const mapStateToProps=(state)=>{

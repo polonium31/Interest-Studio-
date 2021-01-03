@@ -5,11 +5,14 @@ h1{
 .links{
   font-family: 'Montserrat', sans-serif;
   padding: 1%;
+  text-decoration: none;
   font-size: 16px;
   font-weight: bold;
   color: #fff;
 	height: 200px;
   background: -webkit-linear-gradient(right, #7579ff, #b224ef);
+  padding-top: 1%;
+
 
   }
 .links:hover {
@@ -18,13 +21,18 @@ background:-webkit-linear-gradient(right, #b224ef, #7579ff);
 }
 .header
 {
-  padding-top: 1%;
-  padding-bottom: 2%;
+padding-top:2vh;
+padding-bottom: 3vh;
 }
-/* .logo
+#logo
 {
-  float: right;
-	width: 180px;
-	height: 55px;
-	padding-top: 2.5mm;
-} */
+padding-top: 1vh;
+	width: 200px;
+	height: 70px;
+
+}
+.logo_div
+{
+
+
+}

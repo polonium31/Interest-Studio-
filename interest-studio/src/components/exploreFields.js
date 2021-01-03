@@ -5,7 +5,6 @@ import Coding_Image from "./coding.jpg";
 import Writing_Image from  "./writing.png";
 import Music_Image from  "./music.jpg";
 
-
 const ExploreFields=()=>(
    <div className="interests">
 
