@@ -11,9 +11,9 @@ const ExploreInterests=(props)=>{
   const intArray=interests.filter((int)=>{
     return int.name.includes(filter_text)
   })
- 
-  return <div>
-    Search Interes : <input type="text" placeholder="search Interest" value={props.filters.interest_text} onChange={(e)=>{
+
+  return <div className="search_interest">
+<input type="text" className="search_interest_box" placeholder="Search Interest" value={props.filters.interest_text} onChange={(e)=>{
        return {
          value:props.dispatch(setInterestText(e.target.value))
 
@@ -36,7 +36,7 @@ const ExploreInterests=(props)=>{
 //     }
 //   }
 //   render(){
-//     return 
+//     return
 // }
 const mapStateToProps=(state)=>{
   return {

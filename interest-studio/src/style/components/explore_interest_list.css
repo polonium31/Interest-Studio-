@@ -1,0 +1,44 @@
+.interest_list{
+
+font-family: 'Montserrat', sans-serif;
+margin-top: 30px;
+}
+.field_name{
+  margin-top: 25px;
+font-size: 20px;
+color: black;
+text-transform: uppercase;
+}
+.field_name:hover{
+  color: #b224ef;
+}
+.field_name:visited{
+  color: purple;
+  }
+.follow
+{
+
+font-family: 'Montserrat', sans-serif;
+font-size: 12px;
+margin-top: 5px;
+width: 150px;
+background: -webkit-linear-gradient(right, #7579ff, #7579ff);
+border: none;
+outline: none;
+height: 30px;
+border-radius: 49px;
+color: #fff;
+text-transform: uppercase;
+font-weight: 600;
+margin: 10px 0;
+cursor: pointer;
+transition: 0.5s;
+}
+.follow:hover{
+  background: -webkit-linear-gradient(right, #b224ef, #7579ff);
+}
+h6{
+    margin-top: 3px;
+font-family: 'Montserrat', sans-serif;
+font-size: 18px;
+}

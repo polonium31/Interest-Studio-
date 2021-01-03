@@ -7,13 +7,15 @@ const ExploreInterestList =(props)=>{
 
   return (
     <div className = "interest_list" >
-      <Link to={`/viewProfile/${props.interest.id}`}><h3>{props.interest.name}</h3></Link>
-      <button onClick={
+
+      <Link className = "field_name" style={{ textDecoration: 'none' }} to={`/viewProfile/${props.interest.id}`}><h3>{props.interest.name}</h3></Link>
+      <h6>{props.interest.description}</h6>
+      <button className = "follow" onClick={
         ()=>{
         props.dispatch(addInterest(props.interest,props.myProfile[0].id))
         props.dispatch(addPersonToInterest(props.interest.id,props.myProfile[0]))
       }}>Follow Interest</button>
-      <h6>{props.interest.description}</h6>
+
     </div>
 )
 }

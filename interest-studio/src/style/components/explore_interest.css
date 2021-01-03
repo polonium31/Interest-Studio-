@@ -1,0 +1,13 @@
+.search_interest
+{
+padding-left: 2vh;
+}
+.search_interest_box
+{
+  background-color: #f0f0f0;
+  border-radius: 20px;
+ padding: 20px;
+ width: 200px;
+ height: 10px;
+ color: #808080;
+}
