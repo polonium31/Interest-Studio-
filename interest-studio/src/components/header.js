@@ -9,10 +9,10 @@ const Header=(props)=>{
 
   return (
     <div className="header">
-      <NavLink className="links"to={link} >Profile</NavLink>
-      <NavLink className="links"to="/">ExploreFields</NavLink>
-      <NavLink className="links"to="/editProfile"> EditProfile </NavLink>
-      <NavLink className="links"to="/login">Sign In/Sign Up</NavLink>
+      <NavLink style={{ textDecoration: 'none' }} className="links"to={link} >Profile</NavLink>
+      <NavLink style={{ textDecoration: 'none' }} className="links"to="/">ExploreFields</NavLink>
+      <NavLink style={{ textDecoration: 'none' }} className="links"to="/editProfile"> EditProfile </NavLink>
+      <NavLink  style={{ textDecoration: 'none' }} className="links"to="/login">Sign In/Sign Up</NavLink>
 
     </div>
 
