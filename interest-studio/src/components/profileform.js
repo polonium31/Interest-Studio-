@@ -10,7 +10,8 @@ class ProfileForm extends React.Component{
             contact:{
                 email:"",
                 phone:""
-            }
+            },
+            password:""
         }
     }
     handleNameChange=(e)=>{
@@ -48,6 +49,14 @@ class ProfileForm extends React.Component{
            }
        })
     }
+    handlePasswordChange=(e)=>{
+        const password=e.target.value;
+        this.setState(()=>({
+            password
+        })
+            
+        )
+    }
     onSubmit=(e)=>{
 
         e.preventDefault()
@@ -57,7 +66,9 @@ class ProfileForm extends React.Component{
         interests:this.state.interests,
         contact:this.state.contact.phone,
         email:this.state.contact.email,
-        project:this.state.projects})
+        project:this.state.projects,
+        password:this.state.password}
+        )
 
    }
 
@@ -71,7 +82,7 @@ class ProfileForm extends React.Component{
              <input type="text" className="input_field" id="my_university_text" placeholder="University Name" value={this.state.university} onChange={this.handleUniversityChange}/>
              <input type="text" className="input_field" id="my_project" placeholder="Your Projects" value={this.state.projects} onChange={this.handleProjectChange}/>
 
-             <input type="password" className="input_field" placeholder="Password" />
+             <input type="password" className="input_field" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange} />
              <input type="password" className="input_field" placeholder="Confirm Password"/>
 
              Contact Details

@@ -8,7 +8,8 @@ import { removeInterest } from "./action/person";
 import myProfile from "./reducers/myProfile";
 const PersonsInterestListItem=(props)=>{
      const isProfile=props.myProfile[0].id === props.id;
-     
+     console.log("checkPoint")
+     console.log(props.interest)
      return (
         <div>
          <Link to={`/viewProfile/${props.interest.id}`}><h3>{props.interest.name}</h3></Link>

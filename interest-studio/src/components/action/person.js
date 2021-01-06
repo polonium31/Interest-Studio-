@@ -1,9 +1,10 @@
 import {v4 as uuidv4} from "uuid";
-export const addperson = ({id,name,university,interests,contact,email,project}={})=>({
+export const addperson = ({id,name,password,university,interests,contact,email,project}={})=>({
     type:"ADD_PERSON",
     person:{
         id:id,
         name,
+        password,
         university,
         interests,
         contact,

@@ -8,6 +8,8 @@ const  ViewParticularInterest=(props)=>{
  const finalInterest=props.interests.filter((interest)=>interest.id === checkId);
  const university_text=props.filteres.university_text;
  const array=finalInterest[0];
+ console.log("here");
+ console.log(array);
  const intArray=array.peopleThatFollow.filter((int)=>{
   return int.university.includes(university_text)
 })
@@ -26,7 +28,7 @@ return (
      />
      {
        intArray.map((people)=>{
-             
+           
            return (
                     <PeopleList people={people} key={people.id}/ >
                   )
@@ -47,4 +49,5 @@ const mapStateToProps=(state)=>{
 
   }
 }
+
 export default connect(mapStateToProps)(ViewParticularInterest);

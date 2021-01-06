@@ -3,8 +3,8 @@
 const Contact =(props)=>{
     return (
     <div>
-      {!!props.contact.phone&&<h3>Phone :{props.contact.phone} </h3>}
-      {!!props.contact.email&&<h3>Email :{props.contact.email} </h3>}
+      {!!props.contact&&<h3>Phone :{props.contact} </h3>}
+      {!!props.email&&<h3>Email :{props.email} </h3>}
     </div>
 )
 

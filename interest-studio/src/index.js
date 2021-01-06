@@ -13,31 +13,29 @@ const store=ConfigureStore();
 
 
 
-const personOne=store.dispatch(addperson({id:"1",name:"Jainish",university:"indus",interests:[{
+const personOne=store.dispatch(addperson({id:"1",name:"Jainish",password:"jainish122",university:"indus",interests:[{
   
   field:"writing",
   name:"copywriting",
   description:"for creative people who love to put their thoughts on papper",
   peopleThatFollow:[]
 }],
+  project:[],
+  contact:"988998",
+  email:"jp32453245@gmail.com"
+}));
+const personTwo=store.dispatch(addperson({id:"2",name:"Dhruv",password:"dhruv122",university:"iite",interests:[],
+  project:[],
+  contact:"9978518896",
+  email:"dp32453245@gmail.com"
+}));
+const personThree=store.dispatch(addperson({id:"3",name:"Aryan",password:"aryan122",university:"iim",interests:[],
   project:[]
 }));
-const personTwo=store.dispatch(addperson({id:"2",name:"Dhruv",university:"iite",interests:[],
+const PersonFour=store.dispatch(addperson({id:"4",name:"Mihir",password:"Mihir122",university:"Nirma",interests:[],
   project:[],
-  contact:{
-      email:"32453245@gmail.com",
-      phone:9978518896
-  }
-}));
-const personThree=store.dispatch(addperson({id:"3",name:"Aryan",university:"iim",interests:[],
-  project:[]
-}));
-const PersonFour=store.dispatch(addperson({id:"4",name:"Mihir",university:"Nirma",interests:[],
-  project:[],
-  contact:{
-      email:"32453245@gmail.com",
-      phone:9978518896
-  }
+  contact:"123456",
+  email:"mn32453245@gmail.com"
 }));
 store.dispatch(addPersonToInterest(11,{id:"1",name:"Jainish",university:"indus",interests:[ ],
 project:[]
