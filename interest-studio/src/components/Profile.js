@@ -5,6 +5,7 @@ import PersonsInterestList from "../components/PersonsInterestList";
 import {removePerson} from "../components/action/person";
 import {removeMyProfile} from "../components/action/myProfile";
 import {NavLink} from "react-router-dom";
+import {invalidateuser} from "./action/authentaction";
 const Profile=(props)=>{ 
  
    const person =props.peoples.filter((people)=>{
@@ -22,10 +23,13 @@ const Profile=(props)=>{
         <button onClick={()=>{
           props.dispatch(removePerson(pid))
           props.dispatch(removeMyProfile())
+          props.dispatch(invalidateuser())
           props.history.push("/signUp")
        }}>Delete Account</button>
        <button onClick={()=>{
+         props.dispatch(invalidateuser())
          props.history.push("/logIn")
+         
        }}> Sign Out</button>
        <NavLink style={{ textDecoration: 'none' }} className="links"to="/editProfile"> EditProfile </NavLink>
         </div>}

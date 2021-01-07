@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {NavLink} from "react-router-dom";
 import { Redirect } from "react-router-dom";
 import {addMyProfoile} from "../components/action/myProfile"
-
+import {validateuser} from "./action/authentaction";
 
 
 
@@ -44,6 +44,7 @@ import {addMyProfoile} from "../components/action/myProfile"
         if(profile.password === this.state.password){
           flagpass=true;
           this.props.dispatch(addMyProfoile(profile));
+          this.props.dispatch(validateuser())
           this.setState(()=>({
             error:"valid",
             id:profile.id

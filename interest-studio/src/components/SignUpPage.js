@@ -5,6 +5,7 @@ import ProfileForm from "./profileform";
 import {addperson} from "./action/person";
 import {addMyProfoile} from "./action/myProfile";
 import {connect} from "react-redux";
+import {validateuser} from "./action/authentaction";
 const SignUpPage=(props)=>{
     return (
         <div>
@@ -19,6 +20,7 @@ const SignUpPage=(props)=>{
               console.log(newProfile)
                props.dispatch(addperson(newProfile))
                props.dispatch(addMyProfoile(newProfile))
+               props.dispatch(validateuser())
               props.history.push("/")
             }
         }/>

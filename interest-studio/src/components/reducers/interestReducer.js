@@ -33,7 +33,14 @@ const defaultInterestState=[
          name:"copywriting",
          description:"for creative people who love to put their thoughts on papper",
          peopleThatFollow:[]
-     }
+     },
+     {
+        id:16,
+        field:"Music",
+        name:"classical",
+        description:"--------------",
+        peopleThatFollow:[]
+    }
  
  ];
 const interestReducer=(state=defaultInterestState,action)=>{

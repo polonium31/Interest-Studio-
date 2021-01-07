@@ -20,7 +20,7 @@ const ExploreFields=()=>(
              <NavLink to="/exploreInterests/writing" ><img src={Writing_Image} alt="writing_Field" value="writing" id="image"   /></NavLink>
           </div>
           <div className="field">
-             <NavLink to="/exploreInterests/writing" ><img src={Music_Image} alt="Music Field" value="Music" id="image"   /></NavLink>
+             <NavLink to="/exploreInterests/Music" ><img src={Music_Image} alt="Music Field" value="Music" id="image"   /></NavLink>
           </div>
 
    </div>

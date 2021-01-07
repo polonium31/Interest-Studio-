@@ -11,7 +11,9 @@ class ProfileForm extends React.Component{
                 email:"",
                 phone:""
             },
-            password:""
+            password:"",
+            cpassword:"",
+            error:""
         }
     }
     handleNameChange=(e)=>{
@@ -40,6 +42,9 @@ class ProfileForm extends React.Component{
             }
         }
         )
+        
+
+    
     }
     handlePhoneChange=(e)=>{
        const phone=e.target.value;
@@ -57,18 +62,68 @@ class ProfileForm extends React.Component{
             
         )
     }
-    onSubmit=(e)=>{
-
-        e.preventDefault()
-       this.props.onSubmit({
-        name:this.state.name,
-        university:this.state.university,
-        interests:this.state.interests,
-        contact:this.state.contact.phone,
-        email:this.state.contact.email,
-        project:this.state.projects,
-        password:this.state.password}
+    handleCPasswordChange=(e)=>{
+        const cpassword=e.target.value;
+        this.setState(()=>({
+            cpassword
+        })
+            
         )
+    }
+    onSubmit=(e)=>{
+        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        e.preventDefault()
+        if(this.state.name === ""){
+            this.setState(()=>{
+                return {
+                    error:"please enter name"
+                }
+            })
+        }
+        else if(this.state.university === ""){
+            this.setState(()=>{
+                return {
+                    error:"please enter university"
+                }
+            })
+        }
+       else if(this.state.contact.email !== ""){
+        if (! re.test(this.state.contact.email) ) 
+        {
+          this.setState(()=>{
+              return {
+                  error:"please enter valid email"
+              }
+          })
+      }
+       }
+        else if(this.state.password === ""){
+            this.setState(()=>{
+                return {
+                    error:"please enter password"
+                }
+            })
+        }
+        else if(this.state.password === this.state.cpassword)
+       
+        {
+        this.props.onSubmit({
+            name:this.state.name,
+            university:this.state.university,
+            interests:this.state.interests,
+            contact:this.state.contact.phone,
+            email:this.state.contact.email,
+            project:this.state.projects,
+            password:this.state.password}
+            )
+       }
+       else {
+           this.setState(()=>{
+               return {
+                   error:"password didn't maatch Try again"
+               }
+           })
+       }
 
    }
 
@@ -77,13 +132,13 @@ class ProfileForm extends React.Component{
         return (
            <div>
             <form  onSubmit={this.onSubmit} className="profile">
-             <input type="text" className="input_field" id="my_name" placeholder="Username" value={this.state.name} onChange={this.handleNameChange}/>
+             <input type="text" className="input_field" id="my_name" placeholder="Username*" value={this.state.name} onChange={this.handleNameChange}/>
 
-             <input type="text" className="input_field" id="my_university_text" placeholder="University Name" value={this.state.university} onChange={this.handleUniversityChange}/>
+             <input type="text" className="input_field" id="my_university_text" placeholder="University Name*" value={this.state.university} onChange={this.handleUniversityChange}/>
              <input type="text" className="input_field" id="my_project" placeholder="Your Projects" value={this.state.projects} onChange={this.handleProjectChange}/>
 
-             <input type="password" className="input_field" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange} />
-             <input type="password" className="input_field" placeholder="Confirm Password"/>
+             <input type="password" className="input_field" placeholder="Password*" value={this.state.password} onChange={this.handlePasswordChange} />
+             <input type="password" className="input_field" placeholder="Confirm Password" value={this.state.cpassword} onChange={this.handleCPasswordChange}/>
 
              Contact Details
             <input type="text" id="my_email" className="input_field" placeholder="E mail" value={this.state.contact.email} onChange={this.handleEmailChange}/>
@@ -94,9 +149,10 @@ class ProfileForm extends React.Component{
 
              </form>
              <form  action="/signUp">
+             {this.state.error&&<div> <h3>{this.state.error}</h3></div>}
                   <button id="login" to="/signUp">Login</button>
               </form>
-
+            
            </div>
        )
    }

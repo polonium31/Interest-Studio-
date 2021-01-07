@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter , Route ,Switch} from 'react-router-dom';
+import {BrowserRouter , Route ,Switch,Redirect} from 'react-router-dom';
 import Header from "../components/header";
 import ExploreFields from "../components/exploreFields";
 import ExploreInterests from "../components/exploreInterest";
@@ -9,15 +9,22 @@ import NotFoundPage from "../components/notFoundPage";
 import ViewParticularInterest from "../components/viewProfile";
 import LoginPage from "../components/loginPage";
 import SignUpPage from "../components/SignUpPage";
+import {connect} from "react-redux";
 
 
-const  AppRoute=()=>(
+
+const  AppRoute=(props)=>{
+  const isAuthorised=false;
+  return (
     <div>
      <BrowserRouter>
       <div>
-        <Header/>
+      {props.authentaction.isvalid && <Header/>}
         <Switch>
-         <Route exact path="/" component={ExploreFields}/>
+         <Route exact path="/" component={ExploreFields}>
+          {!props.authentaction.isvalid && <Redirect to="logIn"/>}
+         </Route>
+
          <Route path="/exploreInterests/:field" component={ExploreInterests}/>
          <Route path="/Profile/:id" component={Profile}/>
          <Route path="/editProfile" component={EditProfile}/>    
@@ -30,4 +37,10 @@ const  AppRoute=()=>(
      </BrowserRouter>
     </div>
 )
-export default AppRoute;
+}
+const stateToProps=(state)=>{
+  return {
+    authentaction:state.authentication
+  }
+}
+export default connect(stateToProps)(AppRoute);
