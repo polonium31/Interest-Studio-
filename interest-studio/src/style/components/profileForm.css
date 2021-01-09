@@ -1,0 +1,43 @@
+.profileinput{
+    width: 90%;
+    overflow: hidden;
+    font-size: 20px;
+    padding: 8px 0;
+    border-bottom: 1px solid midnightblue; 
+}
+.profileinput i{
+    width: 26px;
+    float: left;
+    text-align: center;
+}
+.profileinput input{
+    border: none;
+    outline: none;
+    background: none;
+    color: black;
+    font-size: 18px;
+    width: 80%;
+    float: left;
+    margin:  0 10px; 
+    overflow: hidden;
+}
+.signup{
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  
+}
+button{
+    width: 80%;
+    background-color:lightseagreen ;
+    color: black;
+    padding: 3px;
+    font-size: 18px; 
+
+}
+.loginbtn{
+    padding-top: 10px;
+    
+}

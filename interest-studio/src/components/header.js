@@ -20,7 +20,7 @@ const Header=(props)=>{
     <div>
     
     <div className="header">
-      
+     
       <NavLink to="/"><img src={icon}  height="60" width="200"/></NavLink>
       <NavLink to={link} style={{ textDecoration: 'none' }} className="links" >Profile</NavLink> 
     </div>
