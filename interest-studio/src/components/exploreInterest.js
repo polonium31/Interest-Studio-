@@ -12,18 +12,22 @@ const ExploreInterests=(props)=>{
     return int.name.includes(filter_text)
   })
 
-  return <div className="search_interest">
-<input type="text" className="search_interest_box" placeholder="Search Interest" value={props.filters.interest_text} onChange={(e)=>{
-       return {
-         value:props.dispatch(setInterestText(e.target.value))
-
-       }
-    }}/>
+  return <div className="interest_container">
+        <div className="searc_interest">
+        Search Ineterst : <input type="text" className="search_interest_box" placeholder="Search Interest" value={props.filters.interest_text} onChange={(e)=>{
+          return {
+            value:props.dispatch(setInterestText(e.target.value))
+   
+          }
+       }}/>
+        </div>
+    <div className="interest_list_container">
     {intArray.map((int)=>(
-      <div key={int.id}>
+      <div key={int.id} className="interest">
       <ExportInterestList key={int.id} interest={int} myProfile={props.myProfile}/>
       </div>
     ))}
+    </div>
    </div>
   }
 // }

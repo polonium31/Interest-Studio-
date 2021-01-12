@@ -1,119 +1,76 @@
 @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
-
 body{
-    margin: 0;
-    padding: 0;
-    height: 700px;  
-    
-      /* #FF4F58FF   */
-      /* #051947, #004d7a,#008793,#00bf72,#a8cb12 */
+     margin:0px;
+     padding:0px;
 }
 .loginbox{
-    
     display: flex;
     justify-content: space-around;
-    height: 730px;
+    height:100vh;
+    width:100hh;
     background:linear-gradient(to  bottom left,#e6bef7,#7579ff  )
 }
 .loginbox h1{
-    float: left;
-    font-size: 40px;
-    margin-bottom: 50px;
-    padding:13 0; 
-    font-family: 'Montserrat', sans-serif;
-    
+    margin:20px;
+    padding:10px;  
 }
 .textbox{
-    width: 80%;
-    overflow: hidden;
-    font-size: 20px;
-    padding: 8px 0;
-    border-bottom: 1px solid midnightblue; 
-    
+    border-left:3px solid midnightblue;
+    border-bottom: 1px solid midnightblue;  
+    display: flex;
 }
-.textbox i{
-    width: 26px;
-    float: left;
-    text-align: center; 
-    
+.textbox i{ 
+    margin-left: 10px;
+    margin-top:auto;
+    margin-bottom: auto; 
 }
 .textbox input{
-    border: none;
+     border: none;
     outline: none;
-    background: none;
-    color: black;
-    font-size: 18px;
-    width: 80%;
-    float: left;
-    margin:  0 10px; 
-    
-
+    margin:10px;
 }
-
 button{
     width: 20%;
     background:-webkit-linear-gradient(right, #b224ef, #7579ff);
     color: black;
     padding: 3px;
     font-size: 18px; 
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 button:hover {
     background:-webkit-linear-gradient(left, #b224ef, #7579ff);
 }
 .newuser{
-    padding-top: 5px;
-     color: black;
+     margin-left:20px;
+     margin-right: 20px;  
 } 
 .icon ul{
-  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding:2px;
 } 
-.icon ul li{
-    display: inline-block;
-    cursor: pointer;
-    margin: 10px;
-    padding-right: 10px;
-    vertical-align: middle;
-}
 .logo{
-    
-    width: 400px;
-    height: 300px;
-    background:none;
-    left: 80%; 
-    margin-top: 150px;
-   
+    margin-top:auto;
+    margin-bottom: auto;
 }
 .loginForm{
-    margin-top: 120px;
-    padding-bottom: 10px;
+    margin-top:auto;
+    margin-bottom: auto;   
 }
 .loginforminput{
-   width: 500px;
-}
-.error{
-    padding-top: 20px;
-}
-.contact{
-    font-size: 20px;
-    font-family: fantasy;
-    text-align: center;
-    margin-top: 40px;
-    margin-left: 40px;
-
+   margin:20px;
+    padding:5px;
 }
 .signuplink{
+    border-radius: 10px;
    background: -webkit-linear-gradient(right, #b224ef, #7579ff);
    width: 20%;
    justify-content: center;
    padding: 4px;
-   border-radius: 10px;
-   border: black 1px solid;
    text-transform: uppercase;
    font-family: 'Montserrat', sans-serif;   
 }
 .signuplink:hover {
-    background:-webkit-linear-gradient(left, #b224ef, #7579ff);
+    background:linear-gradient(left, #b224ef, #7579ff);
 }

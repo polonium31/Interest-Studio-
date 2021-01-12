@@ -1,9 +1,7 @@
 @import "/src/style/base.css";
 @import "/src/style/components/loginPage.css";
 @import "/src/style/components/profileForm.css";
-@import "/src/style/components/header.css";
-@import "/src/style/components/explore_fields.css";
-@import "/src/style/components/sign_in.css";
-@import "/src/style/components/explore_person_list.css";
-@import "/src/style/components/explore_interest_list.css";
-@import "/src/style/components/explore_interest.css";
+@import "/src/style/components/signUp.css";
+@import "./style/components/header.css";
+@import "./style/components/exploreFields.css";
+@import "./style//components/exploreInterest.css";

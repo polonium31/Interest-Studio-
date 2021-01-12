@@ -20,9 +20,8 @@ const Header=(props)=>{
     <div>
     
     <div className="header">
-     
-      <NavLink to="/"><img src={icon}  height="60" width="200"/></NavLink>
-      <NavLink to={link} style={{ textDecoration: 'none' }} className="links" >Profile</NavLink> 
+     <div className="header_home"><NavLink to="/"><img src={icon}  height="60" width="200"/></NavLink></div>
+    <div className="header_profile"><NavLink to={link} style={{ textDecoration: 'none' }} className="links" ><img src={profileIcon} height="80px" width="100px" /></NavLink> </div>
     </div>
     </div>
 

@@ -160,6 +160,7 @@
 // }
 // export default ProfileForm;
 import React from "react";
+import {Link, Redirect} from "react-router-dom";
 class ProfileForm extends React.Component{
     constructor(props){
         super(props);
@@ -287,63 +288,65 @@ class ProfileForm extends React.Component{
        }
 
    }
+   
 
    render(){
 
         return (
           
-           <div class="signup">
-               <div><h1> Enter Your Details:::</h1></div>
+           <div className="signup">
+               <div className="title"><h1> Enter Your Details:::</h1></div>
             <form  onSubmit={this.onSubmit} className="profile">
-            <div class="profileinput">
-            <i class="fa fa-user" aria-hidden="true"></i>
+            <div className="insideWrapper1">
+            <div className="profileinput">
+            <i className="fa fa-user" aria-hidden="true"></i>
             <input type="text" className="input_field" id="my_name" placeholder="Username*" value={this.state.name} onChange={this.handleNameChange}/>
             </div>
             <br></br>
-            <div class="profileinput">
-            <i class="fa fa-university" aria-hidden="true"></i>
+            <div className="profileinput">
+            <i className="fa fa-university" aria-hidden="true"></i>
              <input type="text" className="input_field" id="my_university_text" placeholder="University Name*" value={this.state.university} onChange={this.handleUniversityChange}/>
             </div>
             <br></br>
-            <div class="profileinput">
-            <i class="fa fa-book" aria-hidden="true"></i>
+            <div className="profileinput">
+            <i className="fa fa-book" aria-hidden="true"></i>
             <input type="text" className="input_field" id="my_project" placeholder="Your Projects" value={this.state.projects} onChange={this.handleProjectChange}/>
             </div>
             <br></br>
-            <div class="profileinput">
-            <i class="fa fa-lock" aria-hidden="true"></i>
+            <div className="profileinput">
+            <i className="fa fa-lock" aria-hidden="true"></i>
             <input type="password" className="input_field" placeholder="Password*" value={this.state.password} onChange={this.handlePasswordChange} />
             </div>
             <br></br>
-            <div class="profileinput">
-            <i class="fa fa-lock" aria-hidden="true"></i>
+            <div className="profileinput">
+            <i className="fa fa-lock" aria-hidden="true"></i>
             <input type="password" className="input_field" placeholder="Confirm Password*" value={this.state.cpassword} onChange={this.handleCPasswordChange}/>
             </div>
             <br></br>
-            <div class="contactd">
-            <h2>Contact Details:::</h2>
-            <div class="profileinput">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
+            </div>
+            <div className="insideWrapper1">
+            <div className="title2"><h2>Contact Details:::</h2></div>
+            <div className="profileinput">
+            <i className="fa fa-envelope" aria-hidden="true"></i>
             <input type="text" id="my_email" className="input_field" placeholder="E mail" value={this.state.contact.email} onChange={this.handleEmailChange}/>
             </div>
             <br></br>
-            <div class="profileinput">
-            <i class="fa fa-phone" aria-hidden="true"></i>
+            <div className="profileinput">
+            <i className="fa fa-phone" aria-hidden="true"></i>
             <input type="number" className="input_field" placeholder="Contact Number" id="my_number"  value={this.state.contact.phone} onChange={this.handlePhoneChange}/>
             </div>
             <br></br>
             </div>
             
+            
+            
             <button id="submit_profile">Create Profile</button>
             
             </form>
-            <form  action="/signUp">
+            <div  action="/signUp">
             {this.state.error&&<div> <h3>{this.state.error}</h3></div>}
-            <div class="loginbtn"><button id="login" to="/signUp">Login</button></div>
             
-            
-                  
-            </form>
+            </div>
             </div>
        )
    }

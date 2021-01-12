@@ -7,11 +7,14 @@ import {addMyProfoile} from "./action/myProfile";
 import {connect} from "react-redux";
 import {validateuser} from "./action/authentaction";
 const SignUpPage=(props)=>{
+
+    const redirectToLogin=()=>{
+        props.history.push("/logIn")
+       }
     return (
-        <div>
-
-
-        <div className="login_page">
+        <div className="mainWrapper">
+        <div className="signUpWrapper">
+        <div className="signUpPage">
         <ProfileForm onSubmit={
             (profile)=>{
               const id=uuidv4();
@@ -24,11 +27,14 @@ const SignUpPage=(props)=>{
               props.history.push("/")
             }
         }/>
-    
          </div>
-    
-
+         <div className="loginbtn"><button id="login" onClick={()=>{
+            redirectToLogin()
+        }}>Login</button></div>
         </div>
+       
+        </div>
+        
     )
 }
 export default connect()(SignUpPage);

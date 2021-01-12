@@ -157,52 +157,57 @@ class LoginPage extends React.Component{
        }))
      }
    }
+   redirectToSignUp=()=>{
+    this.props.history.push("/signUp")
+   }
+  //  <div class="signuplink"><NavLink  style={{ textDecoration: 'none' }} className="links"to="/signUp">Sign Up</NavLink></div>
   render(){
      return (
-      <div class = "loginbox"> 
-      <div class="logo">
+      <div className= "loginbox"> 
+      <div className="logo">
       <img src= {intlogo}></img>
-      <div class="icon"> 
-      <div class ="contact">
+      <div className="icon"> 
+      <div className ="contact">
       <p> You Can Contact Us On:::</p>
       </div>
      
       <ul>
-        <li><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></li>
-        <li><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></li>
-        <li><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></li>
-        <li><i class="fa fa-phone fa-lg" aria-hidden="true"></i></li>
-        <li><i class="fa fa-github-square fa-lg" aria-hidden="true"></i></li>
-        <li><i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></li>
-        <li><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></li>
+        <li><i className="fa fa-instagram fa-lg" aria-hidden="true"></i></li>
+        <li><i className="fa fa-envelope fa-lg" aria-hidden="true"></i></li>
+        <li><i className="fa fa-twitter fa-lg" aria-hidden="true"></i></li>
+        <li><i className="fa fa-phone fa-lg" aria-hidden="true"></i></li>
+        <li><i className="fa fa-github-square fa-lg" aria-hidden="true"></i></li>
+        <li><i className="fa fa-facebook-official fa-lg" aria-hidden="true"></i></li>
+        <li><i className="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></li>
         </ul>
       </div>
       </div>
-      <div class="loginForm">
-      <h1>Welcome To InterestStudio </h1>
-      <div class="loginforminput">
+      <div className="loginForm">
+      <h1>Welcome To InterestStudio ::</h1>
+      <div className="loginforminput">
       <form  onSubmit={this.handleSubmit}>
-       <div class="textbox"> 
-       <i class="fa fa-user" aria-hidden="true"></i>
+       <div className="textbox"> 
+       <i className="fa fa-user" aria-hidden="true"></i>
        <input type="text" placeholder="UserName" value={this.state.userName} onChange={this.handleUserNameChange}/></div>
        <br></br>
-       <div class="textbox">
-       <i class="fa fa-lock" aria-hidden="true"></i>
+       <div className="textbox">
+       <i className ="fa fa-lock" aria-hidden="true"></i>
         <input type="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange}/></div>
        <br></br>
        
        <button id='loginbtn'>Login</button>
        </form>
-       {!!this.state.error && <div class = "error">
+       {!!this.state.error && <div className = "error">
         <h3>{this.state.error}</h3>
        </div>}
        {this.state.error === "valid" && <Redirect to={"/"} />}
       </div>
-      <div class="newuser">
+      <div className="newuser">
          <h2> New User?</h2>
-         <div class="signuplink"><NavLink  style={{ textDecoration: 'none' }} className="links"to="/signUp">Sign Up</NavLink></div>
       </div>
-      
+      <div>
+        <button onClick={()=>{this.redirectToSignUp()}}>Sign Up</button>
+      </div>
       </div>
        
       
@@ -212,7 +217,6 @@ class LoginPage extends React.Component{
    }
  }   
  const mapStateToProps=(state)=>{
-  console.log(state)
   return {
    person:state.person,
   }
