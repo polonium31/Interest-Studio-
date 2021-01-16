@@ -26,7 +26,15 @@ const personReducer=(state=defaultPersonState,action)=>{
           return person
          })
       }
-      
+      case("EDIT_PERSON"):{
+         return state.map((person)=>{
+            if(person.id === action.id){
+               
+               return action.updates
+            }
+            else return person
+         })
+      }
         default:
             return state;
     }

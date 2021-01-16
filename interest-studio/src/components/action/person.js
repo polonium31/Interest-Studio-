@@ -1,5 +1,5 @@
 import {v4 as uuidv4} from "uuid";
-export const addperson = ({id,name,password,university,interests,contact,email,project}={})=>({
+export const addperson = ({id,name,password,university,interests,contact,email,project,year}={})=>({
     type:"ADD_PERSON",
     person:{
         id:id,
@@ -9,7 +9,8 @@ export const addperson = ({id,name,password,university,interests,contact,email,p
         interests,
         contact,
         email,
-        project
+        project,
+        year
     }
    })
    export const removePerson=(id)=>({
@@ -40,5 +41,10 @@ export const addperson = ({id,name,password,university,interests,contact,email,p
    })
    export const setId=(id)=>({
        type:"SET_ID",
+       id
+   })
+   export const editPerson=(updates,id)=>({
+       type:"EDIT_PERSON",
+       updates,
        id
    })

@@ -1,0 +1,38 @@
+.particularInterest_container{
+    border:2px solid black;
+    padding:20px;
+}
+.particular_Interest_title{
+    border:solid pink;
+    padding:10px;
+    text-transform: uppercase;
+    color: midnightblue;
+}
+.particular_interest_description{
+    border:2px solid pink;
+    padding:10px;
+    color:gray;
+}
+.particular_interest_search{
+    border:2px solid pink;
+    display: flex;
+    justify-content: center;
+    padding:10px;
+    margin-bottom: 10px;
+}
+.particularInterest_followingPeoples_List{
+    border:2px solid pink;
+    display: flex;
+}
+.particularInterest_followingPeoples_List_title{
+
+    float: left;
+    flex-direction: row;
+    padding:10px;
+}
+.particularInterest_followingPeoples_List_list{
+    
+    float:right;
+    padding:20px;
+    
+}

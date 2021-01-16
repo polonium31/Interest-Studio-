@@ -1,23 +1,28 @@
 
 import {connect} from "react-redux";
 import React from "react";
-import {Link } from "react-router-dom";
+import {Link, Redirect } from "react-router-dom";
 import PersonsInterestList from "./PersonsInterestList"
 import {removePersonFromInterest} from "./action/interest";
 import { removeInterest } from "./action/person";
 import myProfile from "./reducers/myProfile";
+
+
 const PersonsInterestListItem=(props)=>{
      const isProfile=props.myProfile[0].id === props.id;
-     console.log("checkPoint")
-     console.log(props.interest)
+     
      return (
-        <div>
-         <Link to={`/viewProfile/${props.interest.id}`}><h3>{props.interest.name}</h3></Link>
-         <h2>{props.interest.description}</h2>
+        <div className="personsinterest">
+          <h2 className="personsinterest_title">{props.interest.name}</h2>
+         <h3 className="personsinterest_description">{props.interest.description}</h3>
+         <div className="personsinyterest_buttons">
+         <Link to={`/viewProfile/${props.interest.id}`}><button id="vibutton">View Profile</button></Link>
          {isProfile&&<button onClick={()=>{
            props.dispatch(removeInterest(props.myProfile[0].id,props.interest.id))
            props.dispatch(removePersonFromInterest(props.myProfile[0].id,props.interest.id))
-         }}>Remove Interest</button>}
+         }}>Unfollow Interest</button>}
+         
+         </div>
         </div>
     )
 }

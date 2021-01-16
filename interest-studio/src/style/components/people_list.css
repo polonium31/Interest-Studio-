@@ -1,0 +1,25 @@
+.people_list_container{
+  border:2px solid black;
+  margin-bottom: 10px;
+  padding:20px;   
+  display: flex;
+  
+}
+.people_list_name{
+ color:midnightblue
+}
+.people_list_university{
+    color:gray;
+}
+.people_list_container_part1{
+    
+    margin: 10px;
+    padding:10px;
+    
+}
+.people_list_container_part2{
+    
+    padding:30px;
+    margin:10px;
+    
+}

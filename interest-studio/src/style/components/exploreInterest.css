@@ -23,35 +23,35 @@
 }
 .single_interest_container{
     display:flex;
-    border:2px solid black;
+   border:2px solid midnightblue;
     justify-content: space-between;
     box-shadow: 2px black;
 }
 .interest_name{
     text-transform:uppercase;
-    border:2px solid black;
+    
     color: #7579ff;
 }
 .interest_description{
-    border:2px solid black;
+    
 
 }
 .interest_follow_button{
-border:2px solid black;
+
 margin-top:10%;
 }
 .interest_viewProfile_button{
-    border:2px solid black;
+    
 }
 .interest_button_container{
-    border:2px solid red;
+    
     margin:10px;
     width:20%;
     margin-right:10%;
 }
 .interest_intro_container{
     margin:10px 10px 10px 10px;
-    border:2px solid red;
+    
     width:60%;   
 }
 #vibutton{

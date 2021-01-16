@@ -14,28 +14,35 @@ const  ViewParticularInterest=(props)=>{
   return int.university.includes(university_text)
 })
 return (
-    <div>
-     <h1>{finalInterest[0].name}</h1>
-     <h2>{finalInterest[0].description}</h2>
-     University Name:  <input type="text" placeholder="Find Your University " value={props.filteres.university_text}
-      onChange={
-        (e)=>{
-          return{
-            value:props.dispatch(setUniversityText(e.target.value))
-          }
+    <div className="particularInterest_container">
+     <h1 className="particular_Interest_title">{finalInterest[0].name}</h1>
+     <h2 className="particular_interest_description">{finalInterest[0].description}</h2>
+    <div className="particular_interest_search">
+    University Name:  <input type="text" placeholder="Find Your University " value={props.filteres.university_text}
+    onChange={
+      (e)=>{
+        return{
+          value:props.dispatch(setUniversityText(e.target.value.toUpperCase()))
         }
       }
-     />
-     {
-       intArray.map((people)=>{
-           
-           return (
-                    <PeopleList people={people} key={people.id}/ >
-                  )
-       }
-       )
-     }
-     
+    }
+   />
+    </div>
+     <div className="particularInterest_followingPeoples_List">
+      <div className="particularInterest_followingPeoples_List_title" ><h3>People that follow this list</h3></div>
+      <div className="particularInterest_followingPeoples_List_list">
+      {
+        intArray.map((people)=>{
+            
+            return (
+                     <PeopleList people={people} key={people.id}/ >
+                   )
+        }
+        )
+      }
+      </div>
+    
+     </div>
     </div>
 )
 }

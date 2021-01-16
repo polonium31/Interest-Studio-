@@ -1,0 +1,20 @@
+.personsinterest{
+    border:2px solid midnightblue;
+    padding:20px;
+    margin-bottom: 10px;
+}
+.personsinyterest_buttons{
+    
+    display: flex;
+    justify-content: space-around;
+}
+.personsinterest_description{
+     
+     
+     
+}
+.personsinterest_title{
+
+    text-transform: uppercase ;
+    color: #7579ff;
+}

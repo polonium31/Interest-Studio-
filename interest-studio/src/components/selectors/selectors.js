@@ -5,7 +5,7 @@ export const  searchVisibleInterest=(interests,text)=>{
     return interests.filter((interest)=> typeof text !== "string" || interest.name.includes(text))
 }
 export const visibleUniversityPerson=(visiblePerson,text)=>{
-    return visiblePerson.peopleThatFollow.filter((person)=> person.university.includes(text))
+    return visiblePerson.peopleThatFollow.filter((person)=> person.university.toUpperCase().includes(text))
 }
 export const visibleSingleInterest=(interests,id)=>{
     return interests.filter((interest)=> interest.id === id)

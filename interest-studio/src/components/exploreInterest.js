@@ -16,7 +16,7 @@ const ExploreInterests=(props)=>{
         <div className="searc_interest">
         Search Ineterst : <input type="text" className="search_interest_box" placeholder="Search Interest" value={props.filters.interest_text} onChange={(e)=>{
           return {
-            value:props.dispatch(setInterestText(e.target.value))
+            value:props.dispatch(setInterestText(e.target.value.toUpperCase()))
    
           }
        }}/>

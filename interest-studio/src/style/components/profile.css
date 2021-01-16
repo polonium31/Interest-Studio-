@@ -1,0 +1,32 @@
+.profile_container{
+    border:2px solid black;
+    padding:20px;
+}
+.accountSetting{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:20px;
+    
+}
+.profile_detailes{
+    border:2px solid red;
+    color:midnightblue;
+}
+.profile_description_container{
+    margin:10px;
+    display: flex;
+    border:2px solid pink;
+}
+.profile_description_title{
+    
+    float: left;
+    flex-direction: row;
+    padding:10px;
+    
+}
+.profile_description{
+    padding:10px;
+    
+    color:gray;
+    float:right;
+}

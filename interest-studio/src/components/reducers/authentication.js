@@ -1,5 +1,6 @@
 const defaultAuthenticationReducer={
-    isvalid:false
+    isvalid:false,
+    isEditingPage:false
 }
 const authentication=(state=defaultAuthenticationReducer,action)=>{
   switch(action.type){
@@ -14,6 +15,18 @@ const authentication=(state=defaultAuthenticationReducer,action)=>{
               ...state,
               isvalid:false
           }
+      }
+      case("VALIDATE_EDITING"):{
+          return {
+             ...state,
+             isEditingPage:true
+          }
+      }
+      case("INVALIDATE_EDITING"):{
+        return {
+            ...state,
+            isEditingPage:false
+         }
       }
       default :{
           return state

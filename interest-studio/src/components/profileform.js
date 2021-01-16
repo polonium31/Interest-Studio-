@@ -161,23 +161,45 @@
 // export default ProfileForm;
 import React from "react";
 import {Link, Redirect} from "react-router-dom";
+import {connect} from "react-redux";
 class ProfileForm extends React.Component{
+     
     constructor(props){
         super(props);
-        this.state={
-            name:"",
-            university:"",
-            interests:[],
-            projects:"",
-            contact:{
-                email:"",
-                phone:""
-            },
-            password:"",
-            cpassword:"",
-            error:""
+        if(props.myProfile.length===0){
+            this.state={
+                name:"",
+                university:"",
+                interests:[],
+                projects:"",
+                contact:{
+                    email:"",
+                    phone:""
+                },
+                password:"",
+                cpassword:"",
+                error:"",
+                year:""
+            }
+        }
+        else {
+            this.state={
+                name:props.myProfile[0].name,
+                university:props.myProfile[0].university,
+                interests:[],
+                projects:"",
+                contact:{
+                    email:props.myProfile[0].email,
+                    phone:props.myProfile[0].contact
+                },
+                password:props.myProfile[0].password,
+                cpassword:props.myProfile[0].password,
+                error:"",
+                year:props.myProfile[0].year
+            } 
         }
     }
+    
     handleNameChange=(e)=>{
        const name=e.target.value
        this.setState(()=>({
@@ -232,9 +254,16 @@ class ProfileForm extends React.Component{
             
         )
     }
+    handleyearChange=(e)=>{
+        const year=e.target.value;
+        console.log(year)
+        this.setState(()=>({
+            year
+        }))
+    }
     onSubmit=(e)=>{
-        let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        e.preventDefault()
+        // let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+         e.preventDefault()
         if(this.state.name === ""){
             this.setState(()=>{
                 return {
@@ -249,12 +278,19 @@ class ProfileForm extends React.Component{
                 }
             })
         }
-       else if(this.state.contact.email !== ""){
-        if (! re.test(this.state.contact.email) ) 
+        else if(this.state.year >=5 || this.state.year<1){
+            this.setState(()=>{
+                return {
+                     error : "enter valid year of studing"
+                }
+            })
+        }
+       else if(this.state.contact.email === ""){
+    
         {
           this.setState(()=>{
               return {
-                  error:"please enter valid email"
+                  error:"please enter  email"
               }
           })
       }
@@ -271,18 +307,20 @@ class ProfileForm extends React.Component{
         {
         this.props.onSubmit({
             name:this.state.name,
-            university:this.state.university,
+            university:this.state.university.toUpperCase(),
             interests:this.state.interests,
             contact:this.state.contact.phone,
             email:this.state.contact.email,
             project:this.state.projects,
-            password:this.state.password}
+            password:this.state.password,
+            year:this.state.year
+        }
             )
        }
        else {
            this.setState(()=>{
                return {
-                   error:"password didn't maatch Try again"
+                   error:"password didn't match Try again"
                }
            })
        }
@@ -309,21 +347,30 @@ class ProfileForm extends React.Component{
             </div>
             <br></br>
             <div className="profileinput">
+            <i className="fa fa-university" aria-hidden="true"></i>
+            <input type="number" className="input_field" placeholder="Enter the year of collage*" value={this.state.year} onChange={this.handleyearChange}/>
+            </div>
+            <br></br>
+            </div>
+            <div className="profileinput">
             <i className="fa fa-book" aria-hidden="true"></i>
             <input type="text" className="input_field" id="my_project" placeholder="Your Projects" value={this.state.projects} onChange={this.handleProjectChange}/>
             </div>
             <br></br>
-            <div className="profileinput">
-            <i className="fa fa-lock" aria-hidden="true"></i>
-            <input type="password" className="input_field" placeholder="Password*" value={this.state.password} onChange={this.handlePasswordChange} />
-            </div>
-            <br></br>
-            <div className="profileinput">
-            <i className="fa fa-lock" aria-hidden="true"></i>
-            <input type="password" className="input_field" placeholder="Confirm Password*" value={this.state.cpassword} onChange={this.handleCPasswordChange}/>
-            </div>
-            <br></br>
-            </div>
+             {!this.props.auth.isEditingPage&&<div>
+                <div className="profileinput">
+                <i className="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" className="input_field" placeholder="Password*" value={this.state.password} onChange={this.handlePasswordChange} />
+                </div>
+                <br></br>
+                <div className="profileinput">
+                <i className="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" className="input_field" placeholder="Confirm Password*" value={this.state.cpassword} onChange={this.handleCPasswordChange}/>
+                </div>
+                <br></br>
+                </div>}
+            
+            
             <div className="insideWrapper1">
             <div className="title2"><h2>Contact Details:::</h2></div>
             <div className="profileinput">
@@ -340,7 +387,7 @@ class ProfileForm extends React.Component{
             
             
             
-            <button id="submit_profile">Create Profile</button>
+            <button id="submit_profile">{this.props.auth.isEditingPage?"Edit Profile":"craete Profile"}</button>
             
             </form>
             <div  action="/signUp">
@@ -350,4 +397,12 @@ class ProfileForm extends React.Component{
             </div>
        )
    }
-}export default ProfileForm;
+}
+const mapstateToProps=(state)=>{
+     console.log(state.myProfile)
+    return {
+         myProfile:state.myProfile,
+         auth:state.authentication
+    }
+}
+export default connect(mapstateToProps)(ProfileForm);

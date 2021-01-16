@@ -1,70 +1,83 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Table of Contents
+* [About](#about)
+* [Disclaimer](#disclaimer)
+* [Installation](#installation)
+* [Layout](#layout)
+* [Team](#team)
 
-In the project directory, you can run:
 
-### `yarn start`
+## About
+*Problem Statement :* To find students with similar interests pertaining to subjects and co-curricular activities taught at our University.
+**Problem Solution : **We propose a digital platform called Interest Studio that will be inclusive of all mainstream and co-curricular skills and it will have options for each and every visitor to create a profile on our platform and follow the skills of his choice. By following a particular skill set, he/she will get to know other people from our University who follow the same skill set. This way, he/she can diversify his/her interests and find new and smart people who can extend their help in existing projects, ideas or activities.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*How Interest Studio works:*
+- If a student is interested in learning, let say dance fusion of two dance forms like Indo-Western dance. He/She can easily find a group of Indo-Western dancers on Facebook or any other social media platform but it will be difficult to ask each group member their location of living or university for further knowledge.
+- To do so, one has to send a request to all members of that group and once they accept that one has to ask for details. After this all he might get in touch with a similar person, who is on the same level of knowledge.
+InterestStudio can help them by only clicking three times.
+  
+- On the first page of our web-app we provide all main-stream and co-curricular fields that users can explore. 
+  
+-  When one selects a field, he/she will be lead to a page that shows all possible interests that can exist in that field and a search bar to find his favorite skill set.
+ 
+-  After finding his preferred interest, one will be given a list of students that follow this interest and a search filter to find students from his university.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ And then, one can connect and start learning with three easy steps.
 
-### `yarn test`
+## Disclaimer
+This web platform is an underdeveloped project. Therefore, it might contain a few bugs or errors of some kind. If you happen to run across any of them, feel free to raise an issue on our GitHub repository.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `yarn build`
+[How to install Node](https://nodejs.org/en/download/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### HOW TO INSTALL YARN
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### [Install yarn for windows](https://classic.yarnpkg.com/en/docs/install/#windows-stable).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ ##### [Install yarn for Linux](https://classic.yarnpkg.com/en/docs/install/#debian-).
 
-### `yarn eject`
+ ##### [Install yarn for MacOS](https://classic.yarnpkg.com/en/docs/install/#mac-stable).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### To run Interest Studio Project in your computer
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- *For windows*
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To build the project for first time:
+`yarn build`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If you get error that react-scripts is not install then you have to run this command first:
+`yarn add react-scripts`
 
-## Learn More
+To deploy and run local server: 
+`yarn start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- *For Linux*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+ To build the project for first time:
+`yarn build`
 
-### Code Splitting
+If you get error that react-scripts is not install then you have to run this command first:
+`yarn add react-scripts`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To deploy and run local server: 
+`yarn start`
 
-### Analyzing the Bundle Size
+- *For MacOS:*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To build the project for first time:
+`yarn run start`
 
-### Making a Progressive Web App
+To deploy and run local server: 
+`yarn start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Layout
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
+## Team
+1. Dhruv Patel (Team Leader and Back-end Website Developer)
+2. Jainish Patel (Front-end Developer)
+3. Mihir Dharaiya (Front-end Designer)
+4. Binal Patel (Designer)
+5. Aryan Michael(Tester)

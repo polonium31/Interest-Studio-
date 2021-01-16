@@ -22,20 +22,23 @@ const personOne=store.dispatch(addperson({id:"1",name:"Jainish",password:"jainis
 }],
   project:[],
   contact:"988998",
-  email:"jp32453245@gmail.com"
+  email:"jp32453245@gmail.com",
+  year:2
 }));
 const personTwo=store.dispatch(addperson({id:"2",name:"Dhruv",password:"dhruv122",university:"iite",interests:[],
   project:[],
   contact:"9978518896",
-  email:"dp32453245@gmail.com"
+  email:"dp32453245@gmail.com",
+  year:2
 }));
 const personThree=store.dispatch(addperson({id:"3",name:"Aryan",password:"aryan122",university:"iim",interests:[],
-  project:[]
+  project:[],year:2
 }));
 const PersonFour=store.dispatch(addperson({id:"4",name:"Mihir",password:"Mihir122",university:"Nirma",interests:[],
   project:[],
   contact:"123456",
-  email:"mn32453245@gmail.com"
+  email:"mn32453245@gmail.com",
+  year:2
 }));
 store.dispatch(addPersonToInterest(11,{id:"1",name:"Jainish",university:"indus",interests:[ ],
 project:[]

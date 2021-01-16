@@ -3,9 +3,10 @@ import {connect} from "react-redux";
 import Contact from "../components/Contact";
 import PersonsInterestList from "../components/PersonsInterestList";
 import {removePerson} from "../components/action/person";
-import {removeMyProfile} from "../components/action/myProfile";
+import {removeMyProfile,editMyProfile} from "../components/action/myProfile";
 import {NavLink} from "react-router-dom";
 import {invalidateuser} from "./action/authentaction";
+import {validateediting} from "./action/authentaction"
 const Profile=(props)=>{ 
  
    const person =props.peoples.filter((people)=>{
@@ -14,12 +15,12 @@ const Profile=(props)=>{
   
    const pid=props.myProfile.length === 0 ?"": props.myProfile[0].id;
    const isProfile= pid === props.match.params.id;
-   
+    
 
     
    return (
-    <div>
-      {isProfile && <div>
+    <div className="profile_container">
+      {isProfile && <div className="accountSetting">
         <button onClick={()=>{
           props.dispatch(removePerson(pid))
           props.dispatch(removeMyProfile())
@@ -31,16 +32,78 @@ const Profile=(props)=>{
          props.history.push("/logIn")
          
        }}> Sign Out</button>
-       <NavLink style={{ textDecoration: 'none' }} className="links"to="/editProfile"> EditProfile </NavLink>
+      
+       <NavLink style={{ textDecoration: 'none' }} className="links"to="/editProfile" id="vibutton">  <button onClick={()=>{
+        props.dispatch(validateediting());
+      }}> Edit Profile</button> </NavLink>
         </div>}
-       {person.length !== 0 && (
-         <div>
-         <h1>Name : {person[0].name}</h1>
-       <h2>University : {person[0].university}</h2>
-       <h2>Contact : {!person[0].contact?"no contact to show":<Contact contact={person[0].contact} email={person[0].email}/>}</h2>
-       <h3>Interest : {person[0].interests.length ===0?"No interest is stilll subscribe":<PersonsInterestList interests={person[0].interests} id={props.match.params.id}/>}</h3>
+        <div className="profile_detailes">
+        {person.length !== 0 && (
+          <div>
+        <div className="profile_description_container">
+          <h1 >
+            <div className="profile_description_title">
+                Name :
+            </div>
+            <div className="profile_description">
+                {person[0].name}</div>
+          </h1>
          </div>
-       ) }
+        <div className="profile_description_container">
+          <h2>
+           <div className="profile_description_title">
+             University :
+           </div> 
+           <div className="profile_description">
+             {person[0].university}
+            </div>
+          </h2>
+        </div>
+        <div className="profile_description_container">
+         <h2>
+           <div className="profile_description_title">
+             Contact :
+              </div>
+            <div className="profile_description">
+             {!person[0].contact?"no contact to show":<Contact contact={person[0].contact} email={person[0].email}/>}
+             </div>
+             </h2>
+        </div>
+        <div className="profile_description_container">
+         <h2>
+           <div className="profile_description_title">
+             Projects : 
+              </div>
+            <div className="profile_description">
+             {!!!person[0].project?"no Projects to show":person[0].project}
+             </div>
+             </h2>
+        </div>
+        <div className="profile_description_container">
+         <h2>
+           <div className="profile_description_title">
+             Year of Studing : 
+              </div>
+            <div className="profile_description">
+             {person[0].year}
+             </div>
+             </h2>
+        </div>
+      
+        <div className="profile_description_container">
+        <h3>
+         <div className="profile_description_title">
+           Interest :
+           </div> 
+           <div className="profile_description">
+            {person[0].interests.length ===0?"No interest is stilll subscribe":<PersonsInterestList interests={person[0].interests} id={props.match.params.id}/>}
+          </div>
+            </h3>
+          </div>  
+          </div>
+        ) }
+        </div>
+      
     </div>
 )
 }

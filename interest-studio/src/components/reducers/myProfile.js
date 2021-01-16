@@ -10,6 +10,12 @@ const myProfile=(state=defaultProfile,action)=>{
         case("REMOVE_MY_PROFILE"):{
             return []
         }
+        case("EDIT_MYPROFILE"):{
+            return [
+                action.updates
+            ]
+                          
+        }
         default :
          return state
     }

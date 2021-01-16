@@ -36,6 +36,17 @@ button{
     padding: 3px;
     font-size: 18px; 
     border-radius: 30px;
+    
+}
+button:disabled{
+    width: 20%;
+    background:-webkit-linear-gradient(right, #b224ef, #7579ff);
+    color: black;
+    padding: 3px;
+    font-size: 18px; 
+    border-radius: 30px;
+    opacity: 0.6;
+    pointer-events: none;
 }
 
 button:hover {
